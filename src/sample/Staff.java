@@ -25,21 +25,20 @@ public class Staff {
         this.workaddress = new SimpleStringProperty(workaddress);
     }
 
-    public void addToDatabase(String tablename) {
+    public void addIntoDatabase() {
 
-        String theQuery = "INSERT INTO " + tablename +
+        String theQuery = "INSERT INTO " + dbValues.TABLE1 +
                 " ("+ dbValues.FIRSTNAME +","+ dbValues.LASTNAME +
                 ","+ dbValues.AGE +","+ dbValues.POSITION +","+ dbValues.SUPERVISOR +
                 ","+ dbValues.WORKADDRESS +") " +
                 "VALUES (?,?,?,?,?,?);";
 
-        System.out.println(theQuery);
-        processSQL(theQuery);
+        processTheQuery(theQuery);
     }
 
-    public void updateQuery(String tablename, int id) {
+    public void updateDatabase(int id) {
 
-        String theQuery = "UPDATE " + tablename + " SET " +
+        String theQuery = "UPDATE " + dbValues.TABLE1 + " SET " +
                 dbValues.FIRSTNAME + "= ?, " +
                 dbValues.LASTNAME + "= ?, " +
                 dbValues.AGE + "= ?, " +
@@ -48,11 +47,10 @@ public class Staff {
                 dbValues.WORKADDRESS + "= ? " +
                 "WHERE ID = " + id + ";";
 
-        System.out.println(theQuery);
-        processSQL(theQuery);
+        processTheQuery(theQuery);
     }
 
-    private void processSQL(String query) {
+    private void processTheQuery(String query) {
 
         Connection conn = TheConnection.getConnection();
         try {
@@ -69,6 +67,7 @@ public class Staff {
             e.printStackTrace();
         }
     }
+
 
     private ResultSet createList(Statement stmt, String tablename) {
 

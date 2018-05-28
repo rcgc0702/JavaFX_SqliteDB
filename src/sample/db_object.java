@@ -5,7 +5,10 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class db_object {
 
@@ -20,14 +23,13 @@ public class db_object {
 
     public void removeStaff() {
 
-        String query = "DELETE FROM thestaffinformation WHERE ID=?";
+        String query = "DELETE FROM "+ dbValues.TABLE1.toString() +" WHERE ID=?";
         processStatement(query,Task.DELETE);
     }
 
-    public ResultSet modifyStaff() {
+    public ResultSet getIndividualStaff() {
 
-        String query = "SELECT * FROM thestaffinformation WHERE ID =?";
-        System.out.println(query);
+        String query = "SELECT * FROM "+ dbValues.TABLE1.toString() +" WHERE ID =?";
         ResultSet rs;
         rs = processStatement(query,Task.UPDATE);
 
@@ -46,6 +48,7 @@ public class db_object {
                 case UPDATE:
                 case SEARCH:
                     rs = stmt.executeQuery();
+                    System.out.println(rs);
                     return rs;
                 case DELETE:
                     stmt.execute();

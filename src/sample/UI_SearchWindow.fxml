@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:id="grid" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.Controller_SearchWindow"
+          prefHeight="400.0" prefWidth="600.0" vgap="10">
+    <padding><Insets topRightBottomLeft="15"/> </padding>
+    <Label text="Search" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <Label text="Enter characters:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="tf_search" promptText="characters" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Button fx:id="submitbutton" text="search" GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="150"/>
+    <TableView fx:id="tbView" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <columns>
+            <TableColumn fx:id="tc1" prefWidth="125" />
+            <TableColumn fx:id="tc2" prefWidth="125"/>
+            <!--<TableColumn fx:id="tc3"/>-->
+        </columns>
+   </TableView>
+</GridPane>

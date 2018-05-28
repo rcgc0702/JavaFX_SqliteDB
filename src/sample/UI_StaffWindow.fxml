@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.Controller_StaffWindow"
+          hgap="5" vgap="5">
+    <padding><Insets topRightBottomLeft="10"/> </padding>
+    <Label text="First Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="75"/>
+    <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="Age:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label text="Position:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label text="Supervisor: " GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Label text="Location:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Label fx:id="fname" text="aa" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label fx:id="lname" text="bb" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label fx:id="age" text="cc" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label fx:id="position" text="dd" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Label fx:id="supervisor" text="ee" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Label fx:id="workaddress" text="ff" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+</GridPane>

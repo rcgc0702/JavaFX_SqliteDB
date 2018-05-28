@@ -1,6 +1,7 @@
 package sample;
 
 public enum dbValues {
+    TABLE1("thestaffinformation"),
     ID("ID"),
     FIRSTNAME("firstname"),
     LASTNAME("lastname"),

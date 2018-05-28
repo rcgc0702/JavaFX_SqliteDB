@@ -10,17 +10,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.util.Iterator;
-import java.util.Map;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("UI_Main.fxml"));
+        InstancePasser.assignStage(primaryStage,MyStages.MAIN);
         primaryStage.setTitle("Staff Entry");
-        primaryStage.setScene(new Scene(root, 500, 290));
+        primaryStage.setScene(new Scene(root, 500, 325));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -48,6 +46,7 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         TheConnection.closeConnection();
+        System.out.println("Connection closed.");
         super.stop();
     }
 }

@@ -2,9 +2,11 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.sqlite.SQLiteConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public abstract class StaffInfo {
 
@@ -18,8 +20,22 @@ public abstract class StaffInfo {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        System.out.println(resultSet);
         return resultSet;
+    }
+
+    public static ResultSet findStaff(String ask) {
+        String query = "SELECT " + dbValues.FIRSTNAME + ", " +
+                dbValues.ID + "," +
+                dbValues.LASTNAME + " FROM thestaffinformation WHERE " +
+                dbValues.FIRSTNAME + " LIKE '%" + ask + "%' OR " +
+                dbValues.LASTNAME +  " LIKE '%" + ask + "%';";
+
+        System.out.println(query);
+        ResultSet rs = null;
+        rs = processStatement(query);
+        System.out.println("the query" + rs);
+        return rs;
     }
 
     public static ObservableList<db_object> searchDatabase(String query) {

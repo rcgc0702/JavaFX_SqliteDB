@@ -13,7 +13,7 @@ This is a simple application that:
 https://www.dropbox.com/s/vdvoe30knobvdze/TestDataBase.jar?dl=0
 
 # Video Demo
-https://youtu.be/5zA9oqOmIJs
+https://youtu.be/Xnaz2RlCTvA
 
 # Note
 The application is build from Java 10. JNI error happens when the current Java installed is of previous versions.
